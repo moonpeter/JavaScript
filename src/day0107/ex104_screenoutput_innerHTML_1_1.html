@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <title>Title</title>
+    <style>
+        caption {
+            color: green;
+            font-size: xx-large;
+        }
+
+        table {
+            border: thick white solid;
+            width: 500px;
+            margin-left: 20px;
+        }
+
+        th {
+            background: darkgreen;
+            color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        body > table > tbody > tr:nth-child(2n) {
+            background: lightgreen;
+        }
+
+        tr:hover {
+            background: orange;
+        }
+    </style>
+
+</head>
+<body>
+<p>
+    저는 안보여요~
+    Title1: 간단한 화면 출력
+</p>
+<script>
+    var title1 = "대한민국 전국 맛집";
+    var title2 = "지적 대화를 위한 넓고 얕은 지식";
+    var title3 = "베스트셀러 절대로 읽지 마라";
+
+    var list = '';
+
+    list += "<table>";
+    list += "<caption> 베스트셀러 </caption>";
+    list += "<tbody>";
+    list += "<tr>";
+    list += "<th> 순위 </th>";
+    list += "<th> 제목 </th>";
+    list += "</tr>";
+    list += "<tr> <td> 1</td> <td> " + title1 + "</td></tr>";
+    list += "<tr> <td> 2</td> <td> " + title2 + "</td></tr>";
+    list += "<tr> <td> 3</td> <td> " + title3 + "</td></tr>";
+    list += "</tbody>";
+    list += "</table>";
+
+    document.body.innerHTML += list
+</script>
+
+<p>
+    Title2: 간단한 화면 출력
+</p>
+</body>
+</html>

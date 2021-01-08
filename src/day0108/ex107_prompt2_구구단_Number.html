@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var dan = prompt("단을 입력하세요?");
+
+    if (dan == null) {
+        alert("취소를 누르셨군요")
+    } else {
+        if (dan) {
+            if (isNan(dan)) {
+                alert('숫자만 입력 가능합니다.')
+            } else {
+                document.write("입력 단 = " + dan + "<br>");
+                for (var i = 1; i<=9; i++)
+                    document.write(dan + '*' + '=' + i * dan + '<br>');
+            }
+        } else {
+            alert('데이터를 입력하세요');
+        }
+    }
+
+
+</script>
+</body>
+</html>

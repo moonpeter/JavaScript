@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var answer = confirm("장바구니로 이동할까요?");
+    document.write("Answer = " + answer + "<br>");
+
+    var list = '';
+
+    if (answer === true) {
+        list += '<img src="image/장바구니.jpeg">'
+        document.body.innerHTML += list
+    } else {
+        list += '<style>\n' +
+            '    body {background-color: yellow}\n' +
+            '</style>'
+        document.body.innerHTML += list
+    }
+</script>
+</body>
+</html>

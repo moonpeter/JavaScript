@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var number = 100;
+        alert(number)
+
+        var number = Math.sqrt(-3);
+        alert("number : " + number); //에러 메시지 NaN
+
+        var s = 'A';
+        alert("Number(" + s + ") : " + Number(s));
+
+        var digit = '100';
+        alert(Number(digit) + ", typeof Number(digit) : " + typeof Number(digit));
+
+        alert("Number(true) : " + Number(true));
+        alert("Number(false) : " + Number(false));
+
+        if(isNaN('10')) {
+            alert("isNaN('10')")
+        }else {
+            alert("not isNaN('10')") //출
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>력

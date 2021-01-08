@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        caption {
+            color: green;
+        }
+
+        table, th, td {
+            border: 1px black double;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgrey;
+            width: 200px;
+        }
+        tr:nth-child(2n+1) {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var book_num = prompt('주문할 책 수량을 입력하세요', '1')
+
+    var book1 = "JavaScript";
+    var book2 = "HTML";
+    var book3 = "CSS";
+
+    var list = '';
+
+    list += "<table>";
+    list += "<caption> 책 주문 입력 내용 </caption>";
+    list += "<tbody>";
+    list += "<tr>";
+    list += "<th> 순번 </th>";
+    list += "<th> 제목 </th>";
+    list += "</tr>";
+    for (var i = 1; i <= book_num; i++){
+        var order_num = prompt('책 제목을 번호로 선택하세요.\n1.JavaScript\n2.HTML\n3.CSS')
+        if (order_num == 1) {
+            list += "<tr> <td>" + i +"</td> <td> " + book1 + "</td></tr>";
+        } else if (order_num ==2) {
+            list += "<tr> <td>" + i +"</td> <td> " + book2 + "</td></tr>";
+        } else {
+            list += "<tr> <td>" + i +"</td> <td> " + book3 + "</td></tr>";
+        }
+    }
+    list += "</tbody>";
+    list += "</table>";
+
+    document.body.innerHTML += list
+</script>
+</body>
+</html>
