@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var reg = /^[0-9]{6}-[1-4][0-9]{6}$/;
+
+    do {
+        var jumin = prompt("주민번호를 입력하세요?", "880622-1029611");
+
+        var pandan = reg.test(jumin);
+        if(!pandan) {
+            alert("주민번호 형식을 확인하세요");
+        }
+    } while (!pandan);
+
+    var test = jumin.substr(7,1);
+    if(test == "1" || test == "3") {
+        document.write("남자")
+        document.body.style.background = '#565698';
+    } else if (test == "2" || test == "4") {
+        document.write("여자")
+        document.body.style.background = 'pink';
+    }
+</script>
+</body>
+</html>

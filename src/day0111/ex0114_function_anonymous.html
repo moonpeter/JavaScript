@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var functionVar = function() {
+            var output = prompt('숫자를 입력하세요', '숫자');
+            alert("입력한 숫자 = " + output);
+        }
+
+        document.write("typeof(functionVar) = " + typeof(functionVar) + "<br>" + functionVar);
+
+        functionVar();
+
+        (function () {
+            alert("즉시 실행합니다.");
+        })();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
