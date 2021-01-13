@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 70px;
+            height: 25px;
+            margin: 10px 0;
+            border: none;
+        }
+
+        img {
+            width: 100px;
+            position: absolute;
+            visibility: visible;
+            top: 45px;
+        }
+
+        #img1 {
+            left: 50px;
+        }
+
+        #img2 {
+            left: 175px;
+        }
+
+        #img3 {
+            left: 300px;
+        }
+
+        #outerBox {
+            background: blue;
+            width: 550px;
+            height: 300px;
+        }
+
+        #innerBox {
+            background: yellow;
+            width: 450px;
+            height: 200px;
+            position: absolute;
+            left: 55px;
+            top: 55px;
+        }
+        span{
+            display:inline-block;
+            width:80px;
+            background : #ccc;
+            color:black;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="outerBox">
+    <div id="innerBox">
+        <img id="img1" src="image/image1.png">
+        <img id="img2" src="image/image2.png">
+        <img id="img3" src="image/image3.png">
+    </div>
+</div>
+
+<span>Outer Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+<br>
+<span>Inner Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+
+<script>
+    function change(obj, divid, i) {
+        var box = document.getElementById(divid);
+        box.style.backgroundColor = obj.textContent;
+        console.log(i+"번째 단추입니다.");
+    }
+
+    var btn = document.getElementsByTagName('button');
+    for (let i=0; i<btn.length; i++) {
+        btn[i].style.backgroundColor=btn[i].textContent;
+        if(i>=5){
+            btn[i].addEventListener('click', function (){change(this, 'innerBox', i)});
+        } else {
+            btn[i].addEventListener('click', function (){change(this, 'outerBox', i)});
+        }
+    }
+</script>
+
+</body>
+
+</html>

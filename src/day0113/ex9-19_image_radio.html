@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div> 모든 체크박스 선택/해제</div>
+<hr>
+<form action="">
+    <label><input type="radio" name="icon" value="image/image1.png">image1</label><br>
+    <label><input type="radio" name="icon" value="image/image2.png" checked>image2</label><br>
+    <label><input type="radio" name="icon" value="image/image3.png">image3</label><br>
+    <img src="image/image2.png" id="iconImg" alt="">
+</form>
+
+<script>
+    var icons = document.getElementsByName('icon');
+
+    for (var i=0; i<icons.length; i++) {
+        icons[i].addEventListener('click', show);
+    }
+
+    function show(e) {
+        var img = document.getElementById('iconImg');
+        img.src = this.value;
+    }
+</script>
+
+</body>
+</html>

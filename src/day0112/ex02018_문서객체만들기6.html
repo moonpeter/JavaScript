@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onclick = function () {
+            var headers = document.getElementsByTagName('h1');
+            console.log("h1 문서 객체의 갯수 = " + headers.length);
+
+            headers[0].innerHTML = 'headers[0]: with getElementsByTagName';
+            headers[1].innerHTML = 'headers[1]: with getElementsByTagName';
+
+            var input = document.getElementsByName('age');
+            input[0].value = '24살 입니다.';
+            input[0].style.color = 'green';
+
+            input[1].focus();
+            input[1].style.background = 'orange';
+        }
+    </script>
+</head>
+<body>
+<h1 id="header-1">윈도우를 클릭하면 변경됩니다.</h1>
+<h1 id="header-2">윈도우를 클릭하면 변경됩니다.</h1>
+
+<input type="text" name="age">
+<input type="text" name="age">
+
+</body>
+</html>

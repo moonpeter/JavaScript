@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var count = 0;
+        var pic = ['image/딸기.jpeg', 'image/장바구니.jpeg', 'image/Penguins.jpg', 'image/Desert.jpg'];
+
+        function change() {
+            var img_tag = document.getElementById('flower');
+            img_tag.src = pic[count]
+            count += 1;
+            if (count === pic.length)
+                count = 0;
+        }
+
+        setInterval(change, 1000);
+    </script>
+</head>
+<body>
+<div>
+    "1초마다 이미지가 바뀝니다."
+</div>
+<br>
+<img id="flower" width="500px" height="500px">
+</body>
+</html>

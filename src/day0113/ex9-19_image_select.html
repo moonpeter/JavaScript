@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div> 모든 체크박스 선택/해제</div>
+<hr>
+<form action="">
+    <select id="icon">
+        <option value="image/image1.png">image1</option>
+        <option value="image/image2.png" selected>image2</option>
+        <option value="image/image3.png">image3</option>
+    </select>
+    <img src="image/image2.png" id="iconImg" alt="">
+</form>
+
+<script>
+
+    // console.log(opts);
+
+    var opts= document.getElementById('icon');
+    opts.addEventListener('change', show)
+
+    function show(e) {
+        var img = document.getElementById('iconImg');
+        img.src = this.value;
+    }
+</script>
+
+</body>
+</html>

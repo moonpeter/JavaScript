@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form action="test.html" onsubmit="return whenSubmit()">
+    <fieldset>
+        <legend>회원가입 폼</legend>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name"><span></span><br>
+
+        <label for="pass">비밀번호</label>
+        <input type="password" name="pass" id="pass"><span></span><br>
+
+        <label for="pass-check">비밀번호 확인</label>
+        <input type="password" id="pass-check"><span></span><br>
+
+        <input type="submit" value="제출">
+    </fieldset>
+</form>
+
+<script>
+    function whenSubmit() {
+        var name = document.getElementById('name');
+        var pass = document.getElementById('pass');
+        var passCheck = document.getElementById('pass-check');
+        var span = document.getElementsByTagName('span');
+
+        var tf = false;
+
+        function checkId() {
+            if (name.value == '') {
+                span[0].innerHTML = ' 이름을 입력하세요';
+                name.focus();
+                return tf = false;
+            }
+        }
+
+        function checkPass() {
+            if (pass.value == '') {
+                span[1].innerHTML = ' 비밀번호를 입력하세요';
+                pass.focus();
+                return tf = false;
+            }
+        }
+
+        function checkPassCheck() {
+            if (passCheck.value == '') {
+                span[2].innerHTML = ' 비밀번호 확인을 입력하세요';
+                passCheck.focus();
+                return tf = false;
+            }
+        }
+
+        function passTrue() {
+            if (pass.value == passCheck.value && pass.value !== '') {
+                alert('성공');
+                return tf = true;
+            } else {
+                alert('비밀번호가 다릅니다. 다시 입력해주세요');
+                pass.value = '';
+                passCheck.value = '';
+                pass.focus();
+                return tf = false;
+            }
+        }
+
+        checkId();
+        checkPass();
+        checkPassCheck();
+        passTrue();
+
+        return tf;
+    }
+</script>
+
+</body>
+</html>
