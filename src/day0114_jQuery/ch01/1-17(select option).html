@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                var value = $('select > option:selected').val();
+                alert('선택한 메뉴는 ' + value + '입니다.');
+            }, 3000)
+        });
+    </script>
+</head>
+<body>
+<p>5초안에 선택하세요</p>
+<select>
+    <option value="">김밥</option>
+    <option value="">짜장면</option>
+    <option value="">냉면</option>
+    <option value="">비빔밥</option>
+    <option value="">돈까스</option>
+</select>
+</body>
+</html>
