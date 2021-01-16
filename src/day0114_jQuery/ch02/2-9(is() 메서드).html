@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('h1').each(function (index, item){
+                if ($(item).is('.orange')) {
+                    $(item).css('background', 'orange');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<h1 class="green orange">Header-0</h1>
+<h1>Header-1</h1>
+<h1 class="orange">Header-2</h1>
+<h1 class="orange">Header-3</h1>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var array =[
+                {id:"hong", subject:"잘~지내지?", date:"2019-04-23"},
+                {id:"kim", subject:"점심 뭐 먹지?", date:"2019-04-24"},
+                {id:"lee", subject:"짜장먹자", date:"2019-04-24"},
+            ];
+
+            var output = '<table><tr><th>번호</th><th>아이디</th><th>제목</th><th>날짜</th></tr>';
+
+            $.each(array, function(index, item) {
+                output += '<tr><td>' + (index+1) + '</td><td>' + item.id + '</td>';
+                output += '<td>' + item.subject + '</td>';
+                output += '<td>' + item.date + '</td></tr>';
+            });
+            output += "</table>"
+            $('body').html(output);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

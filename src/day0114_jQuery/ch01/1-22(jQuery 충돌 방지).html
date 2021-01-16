@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .orange {background-color: orange}
+        .append::before {content: '+'}
+        .append::after {content: '+'}
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $.noConflict();
+        var q = jQuery;
+
+        q(document).ready(function () {
+            q('h1').addClass('append');
+        });
+    </script>
+</head>
+<body>
+<h1 class="orange">item - 0</h1>
+</body>
+</html>
