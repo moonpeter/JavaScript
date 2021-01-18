@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            var array = ['MON', 'TUE', 'WED'];
+            $('div').text(function (index, text) {
+                console.log("index" + index + ",  textnode=" + text);
+                $(this).text(array[index]);
+            })
+        });
+    </script>
+</head>
+<body>
+<div>월요일</div>
+<div>화요일</div>
+<div>수요일</div>
+</body>
+</html>
