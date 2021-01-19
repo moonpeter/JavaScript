@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0px; padding: 0px;}
+        div {
+            margin: 5px;
+            padding: 3px;
+            border : solid black 3px;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div').click(function (index, html) {
+                alert($(this).find('h1').text() + '\n' + $(this).find('p').text())
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <h1>Header 1</h1>
+    <p>Paragraph 1</p>
+</div>
+<div>
+    <h1>Header 2</h1>
+    <p>Paragraph 2</p>
+</div>
+<div>
+    <h1>Header 3</h1>
+    <p>Paragraph 3</p>
+</div>
+</body>
+</html>

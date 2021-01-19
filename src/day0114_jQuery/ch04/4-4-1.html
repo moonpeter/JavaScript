@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            var count = 0;
+            $('div').click(function () {
+                $(this).html('<mark>이벤트가 발생했습니다. </mark>' + count++);
+
+                $(this).off();
+            });
+        });
+    </script>
+</head>
+<body>
+<div>월요일</div>
+<div>화요일</div>
+<div>수요일</div>
+</body>
+</html>

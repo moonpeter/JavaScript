@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        div {
+            width: 400px;
+            margin: 0 auto;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#my-form').submit(function (event) {
+                var name = $('#name').val();
+                var password = $('#password').val();
+
+                alert(name + ' : ' + password);
+            })
+
+            $('#my-form').submit(function (event) {
+                var count = 0;
+                var name = $('#name').val();
+                if (name == '') {
+                    count++;
+                    var message = "이름을 입력하세요";
+                    if ($('#name').next().is('span')) {
+                        $('#name').next().html(message);
+                    } else {
+                        $('#name').after("<span>" + message + "</span>");
+                    }
+                }
+
+                var password = $('#password').val();
+                if (password == '') {
+                    count++;
+                    var message = "비밀번호를 입력하세요.";
+                    if ($('#password').next().is('span')) {
+                        $('#password').next().html(message);
+                    } else {
+                        $('#password').after("<span>" + message + "</span>");
+                    }
+                }
+
+                if (count != 0) {
+                    return false
+                }
+            })
+
+            var namecheck = false;
+            $('#name').keyup(function (event) {
+                var reg = /^[A-Z][A-Za-z0-9]{7,14}$/;
+                var value=$('#name').val().trim();
+                namecheck=reg.test(value);
+                if(!namecheck) {
+                    var message = "첫글자는 대문자이고, 영문자, 숫자만 가능(총 8~15글자)";
+                    if($(this).next().is('span')) {
+                        $(this).next().html(message);
+                    }else {
+                        $(this).after("<span>" + message + "</span>");
+                    }
+                } else{
+                    $(this).next().text('');
+                }
+            });
+
+            $('#password').focus(function (event) {
+                if(!namecheck) {
+                    alert("이름을 형식에 맞게 입력하신 후 비밀번호를 입력하세요");
+                    $('#name').focus();
+                    return false;
+                }
+            });
+        })
+
+
+    </script>
+</head>
+<body>
+<div>
+    <form action="test.html" id="my-form">
+        <label for="name">User name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <br>
+        <label for="password">User Password</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
