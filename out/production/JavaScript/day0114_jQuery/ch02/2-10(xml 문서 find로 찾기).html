@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        var xml = '';
+        xml += '<friends>';
+        xml += '    <friend>';
+        xml += '        <name>오바마</name>';
+        xml += '        <language>영어</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>하니</name>';
+        xml += '        <language>중국어</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>세종대왕</name>';
+        xml += '        <language>한국어</language>';
+        xml += '    </friend>';
+        xml += '</friends>';
+
+        $(document).ready(function () {
+            var xmlDoc = $.parseXML(xml);
+
+            var output = '';
+            $(xmlDoc).find('friend').each(function (index){
+                output += '<div>' +
+                    '<p>친구' + parseInt(index+1) +'</p>' +
+                    '<h1>' + $(this).find('name').text() + '</h1>' +
+                    '<p>' + $(this).find('language').text() + '</p></div><hr>'
+            });
+            $("body").html(output);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

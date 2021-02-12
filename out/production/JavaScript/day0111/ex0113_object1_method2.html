@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var saram = new Object();
+
+    saram.name = '나최고';
+    saram.age = 25;
+    saram.ki = 170.2;
+    saram.blood = "A";
+    saram.address = "서울시 강남구";
+
+    saram.print=function () {
+        for (var p in saram) {
+            if (p != "print"){
+            document.write(p + ":" +saram[p] +"<br>")
+            }
+        }
+    };
+
+    saram.print();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        div{width: 100px; height: 100px}
+        .red{ background-color: red;}
+        .orange {background-color: orange;}
+        .yellow {background-color: yellow;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            var color = $('div').css('background-color');
+
+            console.log(color);
+        });
+    </script>
+</head>
+<body>
+<div class="red"></div>
+<div class="orange"></div>
+<div class="yellow"></div>
+</body>
+</html>

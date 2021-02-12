@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            border: none;
+            color: white;
+            outline: none;
+            /*background-color: green;*/
+        }
+
+        button:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        button:enabled {
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+    "1초마다 이미지가 바뀝니다."
+</div>
+<br>
+<img id="flower" width="500px" height="500px">
+<br>
+<button id="start">start</button>
+<button id="stop">stop</button>
+<script>
+    var count = 0;
+    var pic = ['image/딸기.jpeg', 'image/장바구니.jpeg', 'image/Penguins.jpg', 'image/Desert.jpg'];
+
+    function change() {
+        var img_tag = document.getElementById('flower');
+        img_tag.src = pic[count]
+        count += 1;
+        if (count === pic.length)
+            count = 0;
+    }
+
+    start = document.getElementById('start');
+    stop = document.getElementById('stop');
+    stop.disabled=true;
+
+    start.onclick = function () {
+        start_time = setInterval(change, 1000);
+        start.disabled=true;
+        // start.style.backgroundColor="gray";
+        stop.disabled=false;
+        // stop.style.backgroundColor="green";
+    }
+    stop.onclick = function (){
+        clearInterval(start_time);
+        start.disabled=false;
+        // stop.style.backgroundColor="gray";
+        stop.disabled=true;
+        // start.style.backgroundColor="green";
+    }
+</script>
+</body>
+</html>

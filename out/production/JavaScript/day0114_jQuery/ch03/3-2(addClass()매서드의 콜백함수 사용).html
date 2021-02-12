@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        div{width: 100px; height: 100px;}
+        .box0{background-color: orange}
+        .box1{background-color: yellow}
+        .box2{background-color: pink}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('div').addClass(function (index){
+                return 'box' + index;
+            })
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

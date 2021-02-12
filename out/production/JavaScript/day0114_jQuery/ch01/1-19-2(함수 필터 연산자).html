@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('tr:eq(0)').css('background', 'black').css('color', 'white');
+            $('td:nth-child(n)').css('background', 'red');
+            $('td:nth-child(n+2)').css('background', 'green');
+            $('td:nth-child(n+3)').css('background', 'yellow');
+        })
+    </script>
+</head>
+<body>
+<table>
+    <caption>추천 도서 표</caption>
+    <thead>
+    <tr>
+        <th>책제목</th>
+        <th>작가</th>
+        <th>가격</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>스티브잡스</td>
+        <td>윌터아이작슨 저, 안진환 역</td>
+        <td>25,000원</td>
+    </tr>
+    <tr>
+        <td>나를 지키는 말 88</td>
+        <td>손화신, 쌤앤파커스</td>
+        <td>25,000원</td>
+    </tr>
+    <tr>
+        <td>언어의 마술사</td>
+        <td>해냄인터내셔널</td>
+        <td>25,000원</td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <td>총</td>
+        <td>2권</td>
+        <td>30,000원 </td>
+    </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>

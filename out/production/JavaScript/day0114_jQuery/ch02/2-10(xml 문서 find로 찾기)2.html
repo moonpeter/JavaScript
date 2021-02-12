@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        var xml = '';
+        xml += '<friends>';
+        xml += '    <friend>';
+        xml += '        <name>오바마</name>';
+        xml += '        <language>영어</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>하니</name>';
+        xml += '        <language>중국어</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>세종대왕</name>';
+        xml += '        <language>한국어</language>';
+        xml += '    </friend>';
+        xml += '</friends>';
+
+        $(document).ready(function () {
+            var xmlDoc = $.parseXML(xml);
+
+            var inputName = prompt("친구 이름을 입력하세요");
+            var output = '친구가 명단에 없습니다.';
+
+            $(xmlDoc).find('friend').each(function (index){
+                if($(this).find('name').text()==inputName) {
+                    output += '<table><caption>검색어 :' + inputName + '</caption>';
+                    output += '<thead><tr><th>번호</th><th>이름</th><th>언어</th></tr></thead><tbody>';
+                    output += '<tr>';
+                    output += '<td>' + $(this).find('name').text() + '</td>';
+                    output += '<td>' + $(this).find('language').text() + '</td>';
+                    output += '</tr>';
+                    output += '</tbody></table>';
+                }
+            });
+            $("body").html(output);
+        })
+    </script>
+</head>
+<body>
+<table></table>
+</body>
+</html>

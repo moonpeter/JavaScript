@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var saram = new Object();
+
+    saram.name = '나최고';
+    saram.age = 25;
+    saram.ki = 170.2;
+    saram.blood = "A";
+    saram.address = "서울시 강남구";
+
+    document.write(saram.name + "<br>");
+    document.write(saram.age + "<br>");
+    document.write(saram.ki + "<br>");
+    document.write(saram.blood + "<br>");
+    document.write(saram.address + "<hr>");
+
+    with (saram) {
+        document.write(name + "<br>");
+        document.write(age + "<br>");
+        document.write(ki + "<br>");
+        document.write(blood + "<br>");
+        document.write(address + "<hr>");
+    }
+
+    document.write(saram["name"] + "<br>")
+    document.write(saram["age"] + "<br>")
+    document.write(saram["ki"] + "<br>")
+    document.write(saram["blood"] + "<br>")
+    document.write(saram["address"] + "<hr>")
+
+    for (var p in saram) {
+        document.write(p + ":" +saram[p] + "<br>")
+    }
+    document.write("<hr>")
+
+    for (var p in saram) {
+        document.write(p + ":" +saram[p] +"<br>")
+    }
+</script>
+</body>
+</html>

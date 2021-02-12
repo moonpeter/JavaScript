@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            var name = prompt('이름을 입력하세요');
+            var id = prompt('변경할 위치를 입력하세요');
+            $('h1').eq(id - 1).text(name)
+        });
+    </script>
+</head>
+<body>
+<h1>Header-1</h1>
+<h1>Header-2</h1>
+<h1>Header-3</h1>
+</body>
+</html>

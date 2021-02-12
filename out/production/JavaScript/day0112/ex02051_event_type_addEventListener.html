@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="text" id="op1" size="2">+
+    <input type="text" id="op2" size="2">
+    <input type="button" id="cal" value="=">
+    <input type="text" id="result" size="2">
+</form>
+
+<script>
+    function add(e) {
+        var op1 = document.getElementById('op1').value;
+        var op2 = document.getElementById('op2').value;
+        var result = document.getElementById('result');
+
+        result.value += Number(op1) + Number(op2);
+        result.style.backgroundColor='orange';
+    }
+
+    var cal = document.getElementById('cal')
+    cal.addEventListener("click", add)
+
+</script>
+
+</body>
+</html>

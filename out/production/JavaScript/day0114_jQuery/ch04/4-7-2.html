@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 100px; height: 40px; color: white;
+            font-weight: bold;
+            border: none; outline: none;
+        }
+        input:hover{
+            opacity: 0.8; cursor: pointer;
+        }
+        input:disabled:hover {
+            opacity: 1; cursor: not-allowed;
+        }
+        #start {
+            background-color: green;
+        }
+        #start:disabled, #end:disabled {
+            background-color: gray;
+        }
+        #end {
+            background-color: red;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('h1').click(function () {
+                $(this).html(function (index, html) {
+                    return html + '*'
+                })
+            })
+
+            $('#end').attr('disabled', true);
+
+            $('#start').click(function (event) {
+                $(this).attr('disabled', true).val('시작중...');
+                $('#end').attr('disabled', false)
+                startInt = setInterval(function () {
+                    $('h1:last').trigger('click');
+                }, 1000);
+            })
+
+            $('#end').click(function () {
+                $('#start').attr('disabled', false).val('트리거 시작');
+                $(this).attr('disabled', true)
+                clearInterval(startInt);
+            })
+
+        });
+    </script>
+</head>
+<body>
+<h1>start : </h1>
+<h1>start : </h1>
+<input type="button" value="트리거 시작" id="start">
+<input type="button" value="트리거 종료" id="end">
+</body>
+</html>

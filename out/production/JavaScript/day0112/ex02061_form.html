@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            text-align: center;
+        }
+        th {
+            width: 100px;
+        }
+        input {
+            text-align: center;
+        }
+        tr > td:nth-child(1) {
+            background-color: yellow;
+        }
+
+        tr:nth-child(5) {
+            background-color: green;
+        }
+        body > form > table > tbody > tr:nth-child(5) > td:nth-child(1) {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<h2>서적 주문 양식</h2>
+<form action="ex0201_domtree.html" method="get" oninput="updateAll();">
+    <table>
+        <tr>
+            <th>책 제목</th>
+            <th>가격</th>
+            <th>수량</th>
+            <th>합계</th>
+        </tr>
+        <tr>
+            <td>4차 산업</td>
+            <td class="price">30,000원</td>
+            <td><input type="text" id="book1" size="2" value="0" onclick="this.select();"></td>
+            <td><input type="text" id="book1Total" size="6" value="0">원</td>
+        </tr>
+        <tr>
+            <td>다이어트</td>
+            <td class="price">27,000원</td>
+            <td><input type="text" id="book2" size="2" value="0" onclick="this.select();"></td>
+            <td><input type="text" id="book2Total" size="6" value="0">원</td>
+        </tr>
+        <tr>
+            <td>윤식당</td>
+            <td class="price">25,000원</td>
+            <td><input type="text" id="book3" size="2" value="0" onclick="this.select();"></td>
+            <td><input type="text" id="book3Total" size="6" value="0">원</td>
+        </tr>
+        <tr>
+            <td>합계</td>
+            <td>&nbsp;</td>
+            <td><input type="text" id="totalNumber" size="2" value="0"></td>
+            <td><input type="text" id="totalPrice" size="6" value="0">원</td>
+        </tr>
+    </table>
+    <br>
+    <input type="reset" value="초기화">
+    <input type="submit" value="제출">
+</form>
+
+<script>
+    var book1 = document.getElementById('book1');
+    var book2 = document.getElementById('book2');
+    var book3 = document.getElementById('book3');
+    var book1Total = document.getElementById('book1Total');
+    var book2Total = document.getElementById('book2Total');
+    var book3Total = document.getElementById('book3Total');
+    var totalNumber = document.getElementById('totalNumber');
+    var totalPrice  = document.getElementById('totalPrice');
+    var remove_text = document.getElementsByClassName('price')
+
+    function updateAll() {
+        book1Total.value = Number(book1.value) * remove_text[0].innerHTML.replace(',', '').replace('원', '');
+        book2Total.value = Number(book2.value) * remove_text[1].innerHTML.replace(',', '').replace('원', '');
+        book3Total.value = Number(book3.value) * remove_text[2].innerHTML.replace(',', '').replace('원', '');
+
+        totalNumber.value = Number(book1.value) + Number(book2.value) + Number(book3.value);
+        totalPrice.value = (Number(book1Total.value) + Number(book2Total.value) + Number(book3Total.value)).toLocaleString();
+    }
+
+</script>
+
+</body>
+</html>
